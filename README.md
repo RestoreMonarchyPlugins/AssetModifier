@@ -7,6 +7,8 @@ For example if you modify clothing `movementMultiplier` property for some item t
 
 Another example is `isInvulnerable` property for weapons. Maplestrike originally can't damage structures or barricades like doors or sentries. Setting `isInvulnerable` and `structureDamage` will enable it to do that, but you will notice that when you shoot at the wall as a player it doesn't show this other kind of crosshair that indicates that you are dealing damage to a structure.
 
+If you need help finding a property or want to ask if it's possible to change specific property feel free to join our Discord server. 
+
 ## Commands
 - **/checkasset \<id\> \<assetType\> or /checkasset \<guid\>** - List all properties of specific asset.
 
@@ -32,14 +34,14 @@ Another example is `isInvulnerable` property for weapons. Maplestrike originally
         <AssetModification Name="_height" Value="14" />
       </Modifications>
     </AssetModifications>
-    <AssetModifications Guid="c45d7632cd5f44eab7ef7f1976a35544" Name="Taxi" AssetType="VEHICLE">
+    <AssetModifications Guid="c45d7632cd5f44eab7ef7f1976a35544" Name="Taxi">
       <Modifications>
         <AssetModification Name="_healthMin" Value="40" />
         <AssetModification Name="_healthMax" Value="60" />
         <AssetModification Name="_health" Value="80" />
       </Modifications>
     </AssetModifications>
-    <AssetModifications Guid="b5da36615ef8412698cbd6db41ea383b" Name="Cow" AssetType="ANIMAL">
+    <AssetModifications Guid="b5da36615ef8412698cbd6db41ea383b" Name="Cow">
       <Modifications>
         <AssetModification Name="_behaviour" Value="1" />
         <AssetModification Name="_regen" Value="0.1" />

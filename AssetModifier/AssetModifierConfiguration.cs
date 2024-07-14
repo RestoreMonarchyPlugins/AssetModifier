@@ -44,7 +44,6 @@ namespace RestoreMonarchy.AssetModifier
                 {
                     Guid = "c45d7632cd5f44eab7ef7f1976a35544",
                     Name = "Taxi",
-                    AssetType = EAssetType.VEHICLE,
                     Modifications = 
                     [
                         new AssetModification("_healthMin", "40"),
@@ -56,7 +55,6 @@ namespace RestoreMonarchy.AssetModifier
                 {
                     Guid = "b5da36615ef8412698cbd6db41ea383b",
                     Name = "Cow",
-                    AssetType = EAssetType.ANIMAL,
                     Modifications =
                     [
                         new AssetModification("_behaviour", "OFFENSE"),
