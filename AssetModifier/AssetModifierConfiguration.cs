@@ -7,10 +7,12 @@ namespace RestoreMonarchy.AssetModifier
 {
     public class AssetModifierConfiguration : IRocketPluginConfiguration
     {
+        public bool Debug { get; set; }
         public List<AssetModifications> Assets { get; set; }
 
         public void LoadDefaults()
         {
+            Debug = false;
             Assets =
             [
                 new()

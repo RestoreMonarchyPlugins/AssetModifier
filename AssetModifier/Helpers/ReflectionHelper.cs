@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
 
 namespace RestoreMonarchy.AssetModifier.Helpers
@@ -18,12 +19,30 @@ namespace RestoreMonarchy.AssetModifier.Helpers
                 // Add fields
                 foreach (var field in type.GetFields(bindingFlags))
                 {
+                    if (members.Any(x => x.DeclaringType == field.DeclaringType && x.Name == field.Name))
+                    {
+                        continue;
+                    }
+                    if (field.Name.EndsWith("k__BackingField"))
+                    {
+                        continue;
+                    }
+
                     members.Add(field);
                 }
 
                 // Add properties
                 foreach (var property in type.GetProperties(bindingFlags))
                 {
+                    if (members.Any(x => x.DeclaringType == property.DeclaringType && x.Name == property.Name))
+                    {
+                        continue;
+                    }
+                    if (property.Name.EndsWith("k__BackingField"))
+                    {
+                        continue;
+                    }
+
                     members.Add(property);
                 }
 

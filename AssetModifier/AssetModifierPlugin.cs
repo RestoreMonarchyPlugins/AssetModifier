@@ -1,6 +1,5 @@
 ﻿using RestoreMonarchy.AssetModifier.Helpers;
 using RestoreMonarchy.AssetModifier.Models;
-using Rocket.API.Collections;
 using Rocket.Core.Logging;
 using Rocket.Core.Plugins;
 using SDG.Unturned;
@@ -36,14 +35,18 @@ namespace RestoreMonarchy.AssetModifier
             Logger.Log($"{Name} has been unloaded!", ConsoleColor.Yellow);
         }
 
-        public override TranslationList DefaultTranslations => new()
+        private void LogDebug(string message)
         {
-            { "", "" }
-        };
+            if (Configuration.Instance.Debug)
+            {
+                Logger.Log($"Debug >> {message}");
+            }
+        }
 
         private void LoadAssetModifications()
         {
-            Logger.Log($"Loading {Configuration.Instance.Assets.Count()} asset modifications...", ConsoleColor.Yellow);
+            Logger.Log($"Loading {Configuration.Instance.Assets.Sum(x => x.Modifications.Count())} modifications for {Configuration.Instance.Assets.Count()} assets...", ConsoleColor.Yellow);
+            int loadedCount = 0;
 
             foreach (AssetModifications assetModifications in Configuration.Instance.Assets)
             {
@@ -133,7 +136,8 @@ namespace RestoreMonarchy.AssetModifier
                                         value = Convert.ChangeType(modification.Value, field.FieldType);
                                     }                                    
                                     field.SetValue(instance, value);
-                                    Logger.Log($"[{asset.FriendlyName} ({asset.id})] {modification.Name} field set to {value}", ConsoleColor.Yellow);
+                                    LogDebug($"[{asset.FriendlyName} ({asset.id})] {modification.Name} field set to {value}");
+                                    loadedCount++;
                                 }
                                 else if (member is PropertyInfo property)
                                 {
@@ -148,7 +152,8 @@ namespace RestoreMonarchy.AssetModifier
                                         value = Convert.ChangeType(modification.Value, property.PropertyType);
                                     }
                                     property.SetValue(instance, value);
-                                    Logger.Log($"[{asset.FriendlyName} ({asset.id})] {modification.Name} property set to {value}", ConsoleColor.Yellow);
+                                    LogDebug($"[{asset.FriendlyName} ({asset.id})] {modification.Name} property set to {value}");
+                                    loadedCount++;
                                 }
                                 else
                                 { 
@@ -172,6 +177,8 @@ namespace RestoreMonarchy.AssetModifier
                     }
                 }
             }
+
+            Logger.Log($"Succcessfully loaded {loadedCount} asset modifications.", ConsoleColor.Yellow);
         }
     }
 }
