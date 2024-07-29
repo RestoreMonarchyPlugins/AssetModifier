@@ -81,7 +81,8 @@ namespace RestoreMonarchy.AssetModifier.Commands
                     continue;
                 }
 
-                Logger.Log($"[{member.Name}] TYPE: \"{member.DeclaringType.Name}\" VALUE: \"{value}\"");
+                Logger.Log($"[{member.Name}] TYPE: \"{member.DeclaringType.Name}\" VALUE: \"{value}\" MEMBER_TYPE: \"{member.MemberType}\"");
+
             }
         }
     }

@@ -42,6 +42,10 @@ namespace RestoreMonarchy.AssetModifier.Helpers
                     {
                         continue;
                     }
+                    if (!property.CanWrite)
+                    {
+                        continue;
+                    }
 
                     members.Add(property);
                 }
