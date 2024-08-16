@@ -31,7 +31,7 @@ namespace RestoreMonarchy.AssetModifier.Commands
                 return;
             }
 
-            Asset asset = null;
+            Asset asset;
 
             if (Guid.TryParse(command[0], out Guid guid))
             {
@@ -81,8 +81,7 @@ namespace RestoreMonarchy.AssetModifier.Commands
                     continue;
                 }
 
-                Logger.Log($"[{member.Name}] TYPE: \"{member.DeclaringType.Name}\" VALUE: \"{value}\" MEMBER_TYPE: \"{member.MemberType}\"");
-
+                Logger.Log($"[{member.Name}] TYPE: \"{member.DeclaringType.Name}\" VALUE: \"{value}\"");
             }
         }
     }

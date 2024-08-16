@@ -12,8 +12,6 @@ namespace RestoreMonarchy.AssetModifier
 {
     public class AssetModifierPlugin : RocketPlugin<AssetModifierConfiguration>
     {
-        private const BindingFlags allBindingFlags = BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.Static;
-
         protected override void Load()
         {
             if (Level.isLoaded)
