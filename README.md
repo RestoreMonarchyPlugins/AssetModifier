@@ -16,16 +16,37 @@ If you need help finding a property or want to ask if it's possible to change sp
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <AssetModifierConfiguration xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Debug>false</Debug>
   <Assets>
     <AssetModifications Id="363" Name="Maplestrike" AssetType="ITEM">
       <Modifications>
         <AssetModification Name="isInvulnerable" Value="true" />
-        <AssetModification Name="structureDamage" Value="300" />
-        <AssetModification Name="barricadeDamage" Value="300" />
-        <AssetModification Name="magazineID" Value="255" />
+        <AssetModification Name="magazineID" Value="17" />
+        <AssetModification Name="sightID" Value="146" />
+        <AssetModification Name="gripID" Value="143" />
+        <AssetModification Name="barrelID" Value="7" />
+        <AssetModification Name="tacticalID" Value="151" />
+        <AssetModification Name="ammoMin" Value="255" />
         <AssetModification Name="ammoMax" Value="255" />
-        <AssetModification Name="playerDamageMultiplier.damage" Value="100" />
-        <AssetModification Name="zombieDamageMultiplier.damage" Value="999" />
+        <AssetModification Name="playerDamageMultiplier.damage" Value="40" />
+        <AssetModification Name="playerDamageMultiplier.leg" Value="0.6" />
+        <AssetModification Name="playerDamageMultiplier.arm" Value="0.6" />
+        <AssetModification Name="playerDamageMultiplier.spine" Value="0.8" />
+        <AssetModification Name="playerDamageMultiplier.skull" Value="1.1" />
+        <AssetModification Name="zombieDamageMultiplier.damage" Value="99" />
+        <AssetModification Name="zombieDamageMultiplier.leg" Value="0.3" />
+        <AssetModification Name="zombieDamageMultiplier.arm" Value="0.3" />
+        <AssetModification Name="zombieDamageMultiplier.spine" Value="0.6" />
+        <AssetModification Name="zombieDamageMultiplier.skull" Value="1.1" />
+        <AssetModification Name="animalDamageMultiplier.damage" Value="40" />
+        <AssetModification Name="animalDamageMultiplier.leg" Value="0.6" />
+        <AssetModification Name="animalDamageMultiplier.spine" Value="0.8" />
+        <AssetModification Name="animalDamageMultiplier.skull" Value="1.1" />
+        <AssetModification Name="barricadeDamage" Value="30" />
+        <AssetModification Name="structureDamage" Value="30" />
+        <AssetModification Name="vehicleDamage" Value="30" />
+        <AssetModification Name="resourceDamage" Value="300" />
+        <AssetModification Name="objectDamage" Value="300" />
       </Modifications>
     </AssetModifications>
     <AssetModifications Id="253" Name="Alicepack" AssetType="ITEM">
@@ -43,7 +64,7 @@ If you need help finding a property or want to ask if it's possible to change sp
     </AssetModifications>
     <AssetModifications Guid="b5da36615ef8412698cbd6db41ea383b" Name="Cow">
       <Modifications>
-        <AssetModification Name="_behaviour" Value="1" />
+        <AssetModification Name="_behaviour" Value="OFFENSE" />
         <AssetModification Name="_regen" Value="0.1" />
         <AssetModification Name="_damage" Value="15" />
       </Modifications>
