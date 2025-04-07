@@ -15,8 +15,6 @@ Not all asset properties can be modified effectively. This plugin changes values
 - **/checkasset \<guid\>** - List all properties of an asset by GUID
 
 ## Configuration
-The plugin uses XML configuration to specify which assets to modify and what properties to change:
-
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <AssetModifierConfiguration xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
